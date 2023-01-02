@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decoder</title>
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/global.css">
+</head>
+<body>
+    <main>
+        <figure>
+            <img class="logo" src="imgs/alura.svg" alt="alura logo" />
+        </figure>
+        <div class="form">
+            <textarea name="textbox" id="textbox" placeholder="Type your text"></textarea>
+
+            <div class="form_sent">
+                <div class="form_alert">
+                    <img src="imgs/exclamation.svg" alt="exclamation mark" width="16px"/>
+                    <label for="textbox">Only lowercase letters and no accents.</label>
+                </div>
+                <div class="form_btns">
+                    <button class="btn dark-submit" onClick="submitEncrypt()" id="encrypt">Encrypt</button>
+                    <button class="btn light-submit" onClick="submitDecrypt()" id="decrypt">Decrypt</button>
+                </div>
+            </div>
+        </div>
+        <div id="result">
+            <img src="imgs/illustration.svg" alt="A person looking at diamond through a magnifying glass">
+            <p class="main_text">No message found</p>
+            <p class="sub_text">Enter text that you want to encrypt or decrypt</p>
+        </div>
+    </main>
+
+    <!-- JAVASCRIPT -->
+    <script src="js/crypt.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
