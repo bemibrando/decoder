@@ -45,6 +45,10 @@ figure{
 
     border: 0;
 }
+.form .redBorder{
+    border: 3px solid red; 
+}
+
 .form .form_sent{
     padding-top: .5rem;
     display: flex;

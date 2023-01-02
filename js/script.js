@@ -1,3 +1,21 @@
+const textBox = document.getElementById('textbox');
+
+textBox.addEventListener('change', function(){
+    
+    if(!checkText(textBox.value)){
+        document.getElementById('encrypt').disabled = true;
+        document.getElementById('decrypt').disabled = true;
+        
+        textBox.classList.add('redBorder');
+    }
+    else{
+        document.getElementById('encrypt').disabled = false;
+        document.getElementById('decrypt').disabled = false;
+
+        textBox.classList.remove('redBorder');
+    }
+})
+
 function updateResult(text){
     const result_div = document.getElementById('result');
 
@@ -7,6 +25,17 @@ function updateResult(text){
     `;
 
 }
+
+function checkText(text){
+    if(text === text.toLowerCase()){
+        const specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+        return !(specialChars.test(text))
+    }
+    else{
+        return false;
+    }
+}
+
 function encrypt(original_text){
     let result = '';
     let encrypting = original_text;
@@ -24,7 +53,7 @@ function encrypt(original_text){
 }
 
 function submitEncrypt(){
-    const original_text = document.getElementById('textbox').value;
+    const original_text = textBox.value;
     encrypt(original_text);
 }
 
@@ -39,6 +68,6 @@ function decrypt(original_text){
 }
 
 function submitDecrypt(){
-    const original_text = document.getElementById('textbox').value;
+    const original_text = textBox.value;
     decrypt(original_text);
 }
