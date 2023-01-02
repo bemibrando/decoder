@@ -71,3 +71,7 @@ function submitDecrypt(){
     const original_text = textBox.value;
     decrypt(original_text);
 }
+
+async function getText(){
+    return await navigator.clipboard.writeText(document.getElementById('result_text').innerHTML);
+}
